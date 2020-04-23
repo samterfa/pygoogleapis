@@ -9,7 +9,7 @@ setup(name='pygoogleapis',
       license='MIT',
       packages=['pygoogleapis'],
       install_requires=[
-            'google.oauth2',
-            'googleapiclient.discovery'
+            'google-oauth',
+            'google-api-python-client'
       ],
       zip_safe=False)
