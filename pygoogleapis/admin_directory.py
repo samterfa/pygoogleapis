@@ -28,12 +28,12 @@ def check_credentials(module, scopes):
     try:
         os.environ[module + '_service_account_file_path']
     except:
-        raise Exception('"os.environ[' + module + '_service_account_file_path"] must be set! This is the path to your service account json file.')
+        raise Exception('os.environ["' + module + '_service_account_file_path"] must be set! This is the path to your service account json file.')
 
     try:
         os.environ[module + "_google_user"]
     except:
-        raise Exception('"os.environ[' + module + '_google_user"] must be set! This is the email address of the user making requests.')
+        raise Exception('os.environ["' + module + '_google_user"] must be set! This is the email address of the user making requests.')
 
     credentials = service_account.Credentials.from_service_account_file(os.environ[module + "_service_account_file_path"], scopes = scopes, subject=os.environ[module + "_google_user"])
     
